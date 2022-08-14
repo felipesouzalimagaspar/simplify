@@ -1,0 +1,46 @@
+{
+    "name": "code/simplify",
+    "type": "library",
+    "description": "A simple way to write classes in PHP. No more getters, setters or constructors.",
+    "authors": [
+        {
+            "name": "Felipe Gaspar"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Code\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\UnitTest\\": "tests/unit"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9",
+        "codeception/codeception": "^5.0",
+        "codeception/module-asserts": "^3.0"
+    },
+    "scripts": {
+        "clear": [
+            "rm -f composer.lock",
+            "@composer clear-cache"
+        ],
+        "unit-test": "phpunit --testsuite 'Unit Test Suite'",
+        "test-application": [
+            "@unit-test"
+        ],
+        "build-application": [
+            "@clear",
+            "@composer install",
+            "@test-application"
+        ]
+    },
+    "scripts-descriptions": {
+        "clear": "Limpa o cache de dependências e o arquivo composer.lock",
+        "unit-test": "Executa os testes unitários utilizando o framework PHPUnit",
+        "test-application": "Executa todas as rotinas de testes configuradas. OBS.: Habilite apenas as rotinas implementadas",
+        "build-application": "Limpa o cache e instala as dependências, e em seguida executa todas as rotinas de testes configuradas"
+    }
+}
