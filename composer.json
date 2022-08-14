@@ -1,5 +1,5 @@
 {
-    "name": "code/simplify",
+    "name": "felipegaspar/simplify",
     "type": "library",
     "description": "A simple way to write classes in PHP. No more getters, setters or constructors.",
     "authors": [
