@@ -20,7 +20,7 @@
         public function __construct(mixed ...$params) {
             return $this->__call('__construct', func_get_args());
         }
-        public function jsonSerialize() {
+        public function jsonSerialize() : mixed  {
             try {
                 return json_decode($this->__call('toJson'), true);
             } catch(\Throwable $t) {
